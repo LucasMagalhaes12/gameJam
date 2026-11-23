@@ -59,7 +59,8 @@ func _on_slot_selected(slot_id: int) -> void:
 		SaveManager.create_new_save(slot_id)
 	_update_slot_btns()
 	set_process_input(false)
-	get_tree().change_scene_to_file("res://src/levels/introduction.tscn")
+	SceneTransition.change_scene("res://src/levels/introduction/introduction.tscn")
+	#get_tree().change_scene_to_file("res://src/levels/introduction.tscn")
 
 
 func _on_delete_save(id:int) -> void:
@@ -77,4 +78,5 @@ func _setup_button_focus(node: Node) -> void:
 
 func _on_back() -> void: 
 	set_process_input(false)
-	get_tree().change_scene_to_file("res://src/ui/menus/main_menu/main_menu.tscn")
+	SceneTransition.change_scene("res://src/ui/menus/main_menu/main_menu.tscn")
+	#get_tree().change_scene_to_file("res://src/ui/menus/main_menu/main_menu.tscn")

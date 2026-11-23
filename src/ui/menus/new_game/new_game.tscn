@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://rsc7w6ei7cpq"]
 
 [ext_resource type="Script" uid="uid://b1ede2t7q07en" path="res://src/ui/menus/new_game/new_game.gd" id="1_esoit"]
+[ext_resource type="Texture2D" uid="uid://dqs5scla0n28i" path="res://assets/sprites/background/background.jpeg" id="2_b0fp5"]
 
 [node name="New Game" type="Control" unique_id=463462581]
 layout_mode = 3
@@ -12,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_esoit")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1857775370]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +29,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_b0fp5")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=188099946]
 layout_mode = 1
@@ -45,7 +50,9 @@ size_flags_vertical = 0
 
 [node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=525774187]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5882353)
+theme_override_font_sizes/font_size = 12
 text = "KEY_LOAD_GAME"
 horizontal_alignment = 1
 
@@ -60,7 +67,8 @@ layout_mode = 2
 
 [node name="Slot1 Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1964770723]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5882353)
 text = "Slot 1"
 horizontal_alignment = 1
 
@@ -79,8 +87,9 @@ layout_mode = 2
 
 [node name="Slot2 Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=275294511]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Slot 1"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5882353)
+text = "Slot 2"
 horizontal_alignment = 1
 
 [node name="Slot2 Btn" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1914301313]
@@ -98,8 +107,9 @@ layout_mode = 2
 
 [node name="Slot3 Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=48130257]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Slot 1"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5882353)
+text = "Slot 3"
 horizontal_alignment = 1
 
 [node name="Slot3 Btn" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1090836432]

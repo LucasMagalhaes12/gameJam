@@ -1,8 +1,69 @@
 [gd_scene format=3 uid="uid://djat70jw6xsip"]
 
 [ext_resource type="Script" uid="uid://d3bphiithmhpq" path="res://src/ui/menus/credits/credits.gd" id="1_jp4l1"]
+[ext_resource type="Texture2D" uid="uid://dqs5scla0n28i" path="res://assets/sprites/background/background.jpeg" id="2_wmdq6"]
 
 [node name="Credits" type="Control" unique_id=1275540597]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_jp4l1")
+
+[node name="Background" type="TextureRect" parent="." unique_id=122143816]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wmdq6")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CenterContainer" type="MarginContainer" parent="Background" unique_id=1469109366]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/CenterContainer" unique_id=500110191]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="Background/CenterContainer/VBoxContainer" unique_id=391695092]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5882353)
+theme_override_font_sizes/font_size = 12
+text = "KEY_TEAM"
+horizontal_alignment = 1
+
+[node name="Team" type="Label" parent="Background/CenterContainer/VBoxContainer" unique_id=1451358752]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+text = "Lucas Magalhães
+Vagner Vilck
+Mary Gabriely
+Luiz Amaral
+Márcio Ferreira"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Label" parent="Background/CenterContainer/VBoxContainer" unique_id=685104033]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5882353)
+theme_override_font_sizes/font_size = 12
+text = "KEY_CREDITS_MENTIONED"
+horizontal_alignment = 1
+
+[node name="Assets" type="Label" parent="Background/CenterContainer/VBoxContainer" unique_id=1265378058]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+text = "Google Gemini [ KEY_IMAGE_GEN ]"
+horizontal_alignment = 1
+vertical_alignment = 1

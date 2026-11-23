@@ -15,19 +15,23 @@ func _ready() -> void:
 	exit.pressed.connect(_on_exit_pressed)
 	_setup_button_focus(self)
 
+
 func _on_play_game_pressed() -> void:
 	set_process_input(false)
-	get_tree().change_scene_to_file("res://src/ui/menus/new_game/new_game.tscn")
+	SceneTransition.change_scene("res://src/ui/menus/new_game/new_game.tscn")
+	#get_tree().change_scene_to_file("res://src/ui/menus/new_game/new_game.tscn")
 
 
 func _on_settings_pressed() -> void:
 	set_process_input(false)
-	get_tree().change_scene_to_file("res://src/ui/menus/settings/settings.tscn")
+	SceneTransition.change_scene("res://src/ui/menus/settings/settings.tscn")
+	#get_tree().change_scene_to_file("res://src/ui/menus/settings/settings.tscn")
 
 
 func _on_credits_pressed() -> void:
 	set_process_input(false)
-	get_tree().change_scene_to_file("res://src/ui/menus/credits/credits.tscn")
+	SceneTransition.change_scene("res://src/ui/menus/credits/credits.tscn")
+	#get_tree().change_scene_to_file("res://src/ui/menus/credits/credits.tscn")
 
 
 func _on_exit_pressed() -> void:

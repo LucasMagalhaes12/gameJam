@@ -36,7 +36,8 @@ func _on_fullscreen() -> void:
 
 func _on_back() -> void:
 	set_process_input(false)
-	get_tree().change_scene_to_file("res://src/ui/menus/main_menu/main_menu.tscn")
+	SceneTransition.change_scene("res://src/ui/menus/main_menu/main_menu.tscn")
+	#get_tree().change_scene_to_file("res://src/ui/menus/main_menu/main_menu.tscn")
 
 
 func _update_ui() -> void:

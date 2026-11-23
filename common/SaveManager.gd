@@ -10,11 +10,11 @@ var user_settings: Dictionary = {
 var current_slot: int = 1
 
 var default_game_data: Dictionary = {
-	"day": 1,
-	"anxiety_level": 0,
-	#"player_name": "Jane Doe",
-	"completed_calls": 0
+	"score": 0,
+	"coins": 0,
+	"level": 1
 }
+
 var game_data: Dictionary = {}
 
 

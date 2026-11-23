@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Weak Connection"
+config/name="Game Jam"
 run/main_scene="uid://cay5pul0gw5f4"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SaveManager="*uid://baftc6cph02qw"
 LanguageManager="*uid://6tmae3ok3tmu"
 ScreenManager="*uid://dvoc60wefj7ha"
+SceneTransition="*uid://meh04l7s4xb0"
 
 [display]
 
