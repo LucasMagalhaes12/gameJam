@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dg1pawk0rpji"]
+
+[ext_resource type="Texture2D" uid="uid://b1f8w2ds85fd2" path="res://assets/sprites/mouse/hand_woman2.png" id="1_4m8ck"]
+[ext_resource type="Script" uid="uid://c73u1c0qkqc80" path="res://src/entities/player/player.gd" id="1_vt6n5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucufk"]
+size = Vector2(16.5, 13)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=579665308]
+script = ExtResource("1_vt6n5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=310368048]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_ucufk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=59100884]
+position = Vector2(2, 22)
+scale = Vector2(0.09472319, 0.094723195)
+texture = ExtResource("1_4m8ck")

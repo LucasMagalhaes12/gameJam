@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://52myl6y7pc6r"]
+
+[ext_resource type="Script" uid="uid://bh8wqh22cyw8n" path="res://src/ui/menus/main_menu/main_menu.gd" id="1_upctu"]
+[ext_resource type="Texture2D" uid="uid://binl84yf115dp" path="res://assets/sprites/computer/cover3.jpeg" id="2_qw75l"]
+
+[node name="Menu" type="Control" unique_id=1307717951]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_upctu")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1918359123]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qw75l")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=3751639]
+layout_mode = 1
+offset_right = 80.0
+offset_bottom = 124.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=573443138]
+layout_mode = 2
+alignment = 1
+
+[node name="Play Game" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1595942557]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_PLAY"
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer" unique_id=622855006]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_SETTINGS"
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1340650617]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_CREDITS"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=868250958]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_EXIT"

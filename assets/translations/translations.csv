@@ -1,0 +1,26 @@
+keys,en,pt_BR
+
+KEY_WARNING,"[center]CONTENT WARNING[/center]\n\nThis game addresses sensitive themes related to mental health, including depictions of anxiety. The experience was developed to explore these topics responsibly, but some scenes and dialogues may be uncomfortable or emotionally triggering.\nIf you feel overwhelmed at any point, please take a break.\nYour mental health and well-being are always the top priority. By proceeding, you confirm that you are aware of the content covered.","[center]AVISO DE CONTEÚDO[/center]\n\nEste jogo aborda temas sensíveis relacionados à saúde mental, incluindo representações de ansiedade. A experiência foi desenvolvida para explorar esses assuntos com responsabilidade, mas algumas cenas e diálogos podem ser desconfortáveis ou gerar gatilhos emocionais.\nSe você se sentir sobrecarregado em qualquer momento, faça uma pausa.\nSua saúde mental e bem-estar são sempre a maior prioridade. Ao prosseguir, você confirma que está ciente do conteúdo abordado."
+
+KEY_PLAY,Play,Jogar
+KEY_SETTINGS,Settings,Configurações
+KEY_CREDITS,Credits,Créditos
+KEY_EXIT,Exit,Sair
+
+KEY_LANGUAGE,Language,Linguagem
+KEY_ON,On,Ligado
+KEY_OFF,Off,Desligado
+KEY_WINDOW,Window,Janela
+KEY_FULLSCREEN,Full Screen,Tela Cheia
+KEY_RESOLUTION,Resolution,Resolução
+KEY_CURRENT_LANG,English, Português Brasil
+KEY_APPLY,Apply,Aplicar
+KEY_BACK,Back,Voltar
+
+KEY_LOAD_GAME,Load Game,Carregar Jogo
+KEY_SLOT,Slot %d,Perfil %d
+KEY_NEW_GAME,New Game, Novo Jogo
+KEY_SLOT_EMPTY,New Game,Novo Jogo
+KEY_SLOT_EMPTY2,Empty Slot,Slot Vazio
+KEY_SLOT_SAVED,Saved Slot,Slot Salvo
+KEY_DELETE,Delete,Excluir

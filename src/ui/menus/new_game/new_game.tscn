@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://rsc7w6ei7cpq"]
+
+[ext_resource type="Script" uid="uid://b1ede2t7q07en" path="res://src/ui/menus/new_game/new_game.gd" id="1_esoit"]
+
+[node name="New Game" type="Control" unique_id=463462581]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_esoit")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1857775370]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.33912995, 0.6909966, 0.68340975, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=466692093]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=188099946]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer" unique_id=991203868]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=525774187]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "KEY_LOAD_GAME"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=2000606631]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1529190447]
+layout_mode = 2
+
+[node name="Slot1 Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1964770723]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Slot 1"
+horizontal_alignment = 1
+
+[node name="Slot1 Btn" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=636609420]
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+text = "KEY_NEWGAME"
+
+[node name="Slot1Delete Btn" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=875372509]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_DELETE"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=743751823]
+layout_mode = 2
+
+[node name="Slot2 Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=275294511]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Slot 1"
+horizontal_alignment = 1
+
+[node name="Slot2 Btn" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1914301313]
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+text = "KEY_NEWGAME"
+
+[node name="Slot2Delete Btn" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=541921861]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_DELETE"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1279628829]
+layout_mode = 2
+
+[node name="Slot3 Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=48130257]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Slot 1"
+horizontal_alignment = 1
+
+[node name="Slot3 Btn" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1090836432]
+custom_minimum_size = Vector2(70, 60)
+layout_mode = 2
+text = "KEY_NEWGAME"
+
+[node name="Slot3Delete Btn" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1936159950]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_DELETE"
+
+[node name="Back" type="Button" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=423159379]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_BACK"

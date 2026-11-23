@@ -1,0 +1,16 @@
+# Pasta de cache/importação da Godot 4
+.godot/
+
+# Builds/Executáveis exportados pelo projeto
+*.apk
+*.aab
+*.exe
+*.a
+*.o
+*.so
+*.dylib
+*.pck
+
+# Arquivos temporários do editor e SO
+.DS_Store
+Thumbs.db

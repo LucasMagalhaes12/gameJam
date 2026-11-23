@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://djat70jw6xsip"]
+
+[ext_resource type="Script" uid="uid://d3bphiithmhpq" path="res://src/ui/menus/credits/credits.gd" id="1_jp4l1"]
+
+[node name="Credits" type="Control" unique_id=1275540597]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jp4l1")

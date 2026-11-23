@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d364jan4d42r7"]
+
+[ext_resource type="PackedScene" uid="uid://b5wof2olnfdhk" path="res://src/entities/base/base.tscn" id="1_kg615"]
+[ext_resource type="PackedScene" uid="uid://dg1pawk0rpji" path="res://src/entities/player/player.tscn" id="2_u5ev4"]
+
+[node name="Control" type="Control" unique_id=1993756195]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Base" parent="." unique_id=1137420335 instance=ExtResource("1_kg615")]
+layout_mode = 1
+
+[node name="CharacterBody2D" parent="." unique_id=579665308 instance=ExtResource("2_u5ev4")]
+position = Vector2(221, 153)

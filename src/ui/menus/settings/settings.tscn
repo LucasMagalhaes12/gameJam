@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://ufvmb3frlyoy"]
+
+[ext_resource type="Script" uid="uid://cnhm27kn67e2p" path="res://src/ui/menus/settings/settings.gd" id="1_r8ckd"]
+[ext_resource type="Texture2D" uid="uid://bra4qwtnxlsvt" path="res://assets/sprites/mouse/mouse_blur.jpeg" id="2_6txiv"]
+
+[node name="Settings" type="Control" unique_id=884577634]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r8ckd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1015841027]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.29907525, 0.9964494, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=106474305]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6txiv")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1635116286]
+layout_mode = 1
+offset_right = 165.0
+offset_bottom = 124.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=782642158]
+layout_mode = 2
+
+[node name="HBoxResolution" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=442758242]
+layout_mode = 2
+
+[node name="Resolution Btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxResolution" unique_id=1806959015]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_RESOLUTION"
+
+[node name="Resolution Lb" type="Label" parent="MarginContainer/VBoxContainer/HBoxResolution" unique_id=1193986301]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+
+[node name="HBoxFullscreen" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1588505534]
+layout_mode = 2
+
+[node name="FullScreen Btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxFullscreen" unique_id=509626586]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_FULLSCREEN"
+
+[node name="FullScreen Lb" type="Label" parent="MarginContainer/VBoxContainer/HBoxFullscreen" unique_id=82241089]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "KEY_OFF"
+
+[node name="HBoxLanguage" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=518061671]
+layout_mode = 2
+
+[node name="Language Btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxLanguage" unique_id=1209577352]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_LANGUAGE"
+
+[node name="Language Lb" type="Label" parent="MarginContainer/VBoxContainer/HBoxLanguage" unique_id=1434687134]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "KEY_CURRENT_LANG"
+
+[node name="HBoxBack" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1837123968]
+layout_mode = 2
+
+[node name="Back Btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxBack" unique_id=1894881838]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_BACK"
+
+[node name="Apply Btn" type="Button" parent="MarginContainer/VBoxContainer/HBoxBack" unique_id=135134317]
+visible = false
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+text = "KEY_APPLY"
