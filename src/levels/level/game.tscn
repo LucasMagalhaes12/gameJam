@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bkwx3muchu6uh"]
+
+[ext_resource type="Texture2D" uid="uid://dqs5scla0n28i" path="res://assets/sprites/background/background.jpeg" id="1_0fgqs"]
+[ext_resource type="PackedScene" uid="uid://uaq062mn5qwu" path="res://src/entities/player/player.tscn" id="1_jg2ha"]
+
+[node name="Game" type="Node2D" unique_id=506858452]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=972138686]
+color = Color(0.15607512, 0.15607512, 0.15607512, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1562973465]
+custom_minimum_size = Vector2(200, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -685.0
+offset_top = -383.0
+offset_right = 1006.0
+offset_bottom = 433.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1319848, 0.1319848, 0.1319848, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=767936315]
+offset_left = -685.0
+offset_top = -383.0
+offset_right = -645.0
+offset_bottom = -343.0
+texture = ExtResource("1_0fgqs")
+
+[node name="Player" parent="." unique_id=832521055 instance=ExtResource("1_jg2ha")]
+position = Vector2(147, 142)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd0i3tgvtofrc"
-path="res://.godot/imported/blueberry2.jpeg-f31b1c198974931528147e2c3cb25eff.ctex"
+uid="uid://w6t273lohr3x"
+path="res://.godot/imported/cursor.svg-d0d18bbf3f76a655d1895a315567efb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/blueberry2.jpeg"
-dest_files=["res://.godot/imported/blueberry2.jpeg-f31b1c198974931528147e2c3cb25eff.ctex"]
+source_file="res://assets/sprites/cursor/cursor.svg"
+dest_files=["res://.godot/imported/cursor.svg-d0d18bbf3f76a655d1895a315567efb6.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
