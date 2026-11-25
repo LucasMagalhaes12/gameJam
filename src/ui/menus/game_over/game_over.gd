@@ -1,11 +1,27 @@
-extends Node2D
+class_name GameOver
+extends CanvasLayer
 
 
-# Called when the node enters the scene tree for the first time.
+@onready var retry_button: Button = $CenterContainer/VBoxContainer/RetryButton
+@onready var menu_button: Button = $CenterContainer/VBoxContainer/MenuButton
+
+
 func _ready() -> void:
-	pass # Replace with function body.
+	retry_button.pressed.connect(_on_retry_pressed)
+	menu_button.pressed.connect(_on_menu_pressed)
+	retry_button.grab_focus()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_retry_pressed() -> void:
+	_disable_buttons()
+	SceneTransition.change_scene("res://src/levels/game.tscn")
+
+
+func _on_menu_pressed() -> void:
+	_disable_buttons()
+	SceneTransition.change_scene("res://src/ui/menus/main_menu/main_menu.tscn")
+
+
+func _disable_buttons() -> void:
+	retry_button.disabled = true
+	menu_button.disabled = true

@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _on_play_game_pressed() -> void:
 	set_process_input(false)
-	SceneTransition.change_scene("res://src/ui/menus/new_game/new_game.tscn")
+	SceneTransition.change_scene("res://src/levels/introduction/introduction.tscn")
 	#get_tree().change_scene_to_file("res://src/ui/menus/new_game/new_game.tscn")
 
 

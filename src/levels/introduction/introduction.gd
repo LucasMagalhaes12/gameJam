@@ -12,5 +12,5 @@ func _input(event: InputEvent) -> void:
 
 func _go_to_next_scene() -> void:
 	set_process_input(false)
-	SceneTransition.change_scene("res://src/levels/level_1.tscn")
+	SceneTransition.change_scene("res://src/levels/level/game.tscn")
 	#get_tree().change_scene_to_file("res://src/levels/level_1.tscn")

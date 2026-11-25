@@ -128,6 +128,7 @@ func _drain_fear(delta: float) -> void:
 	if current_fear <= 0.0 and not has_panicked:
 		has_panicked = true
 		panic_triggered.emit()
+		SceneTransition.change_scene("res://src/ui/menus/game_over/game_over.tscn")
 
 
 func _set_flashlight(active: bool) -> void:

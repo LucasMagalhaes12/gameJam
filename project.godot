@@ -80,6 +80,13 @@ interact={
 
 locale/translations=PackedStringArray("res://assets/translations/translations.en.translation", "res://assets/translations/translations.pt_BR.translation")
 
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Interactives"
+2d_physics/layer_4="Others"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
