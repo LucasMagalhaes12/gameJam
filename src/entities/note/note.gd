@@ -1,10 +1,11 @@
+class_name Note
 extends Area2D
 
 @export var note_id: String = "NOTE_01"
 
 @onready var prompt_label: Label = $PromptLabel
 
-var player_in_range: bool = false
+var player_ref: Player = null
 
 
 func _ready() -> void:
@@ -14,20 +15,27 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if player_in_range and event.is_action_pressed("interact"):
+	if player_ref == null or not player_ref.can_move:
+		return
+
+	if event.is_action_pressed("interact"):
 		get_viewport().set_input_as_handled()
-		var translated_title := tr(note_id + "_TITLE")
-		var translated_content := tr(note_id + "_CONTENT")
-		get_tree().call_group("note_reader", "open_note", note_id, translated_title, translated_content)
+		get_tree().call_group(
+			"note_reader",
+			"open_note",
+			note_id,
+			tr("%s_TITLE" % note_id),
+			tr("%s_CONTENT" % note_id)
+		)
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		player_in_range = true
+	if body is Player:
+		player_ref = body
 		prompt_label.visible = true
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.name == "Player":
-		player_in_range = false
+	if body == player_ref:
+		player_ref = null
 		prompt_label.visible = false

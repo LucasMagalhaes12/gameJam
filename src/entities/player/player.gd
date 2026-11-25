@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 signal panic_triggered
@@ -7,10 +8,10 @@ signal panic_triggered
 
 @export_group("Lanterna e Medo")
 @export var max_battery: float = 100.0
-@export var battery_drain_rate: float = 4.0 # Quanto gasta por segundo ligada
+@export var battery_drain_rate: float = 4.0
 @export var max_fear: float = 100.0
-@export var fear_drain_rate: float = 7.0    # Quanto desce por segundo no escuro
-@export var fear_regen_rate: float = 3.0    # Quanto recupera por segundo com luz
+@export var fear_drain_rate: float = 7.0
+@export var fear_regen_rate: float = 3.0
 
 @onready var aura_light: PointLight2D = $AuraLight
 @onready var sprite: AnimatedSprite2D = $Sprite2D
@@ -18,24 +19,42 @@ signal panic_triggered
 @onready var flashlight: PointLight2D = $FlashlightPivot/Flashlight
 @onready var flashlight_area: Area2D = get_node_or_null("FlashlightPivot/FlashlightArea")
 
-var can_move: bool = true
+var can_move: bool = true:
+	set(value):
+		can_move = value
+		if not can_move:
+			velocity = Vector2.ZERO
+
 var base_energy: float = 1.2
-var current_battery: float
-var current_fear: float
 var has_panicked: bool = false
+
+var current_battery: float:
+	set(value):
+		var clamped := clampf(value, 0.0, max_battery)
+		if is_equal_approx(current_battery, clamped):
+			return
+		current_battery = clamped
+		get_tree().call_group("hud", "update_battery", current_battery, max_battery)
+
+var current_fear: float:
+	set(value):
+		var clamped := clampf(value, 0.0, max_fear)
+		if is_equal_approx(current_fear, clamped):
+			return
+		current_fear = clamped
+		get_tree().call_group("hud", "update_fear", current_fear, max_fear)
 
 
 func _ready() -> void:
+	add_to_group("player")
 	base_energy = flashlight.energy
 	current_battery = max_battery
 	current_fear = max_fear
 	_set_flashlight(flashlight.visible)
-	_sync_hud()
 
 
 func _physics_process(delta: float) -> void:
 	if not can_move:
-		velocity = Vector2.ZERO
 		return
 
 	_handle_movement()
@@ -47,35 +66,28 @@ func _process(delta: float) -> void:
 		return
 
 	if flashlight.visible:
-		# Consome bateria enquanto a lanterna está ligada
-		current_battery = max(0.0, current_battery - battery_drain_rate * delta)
-		if current_battery <= 0.0:
-			_set_flashlight(false)
-
-		# Recupera a sanidade gradualmente com a luz acesa
-		current_fear = min(max_fear, current_fear + fear_regen_rate * delta)
-		if current_fear > 0.0:
-			has_panicked = false
+		_update_battery(delta)
+		_recover_fear(delta)
 	else:
-		# Reduz a barra no escuro
-		current_fear = max(0.0, current_fear - fear_drain_rate * delta)
-		if current_fear <= 0.0 and not has_panicked:
-			has_panicked = true
-			panic_triggered.emit()
-
-	_sync_hud()
+		_drain_fear(delta)
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not can_move:
 		return
 
-	# Liga ou desliga a lanterna com o botão direito do mouse
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 		if not flashlight.visible and current_battery <= 0.0:
 			return
-
 		_set_flashlight(not flashlight.visible)
+
+
+func add_battery(amount: float) -> bool:
+	if current_battery >= max_battery:
+		return false
+
+	current_battery += amount
+	return true
 
 
 func _handle_movement() -> void:
@@ -99,17 +111,26 @@ func _handle_flashlight(delta: float) -> void:
 		flashlight.energy = base_energy + randf_range(-0.05, 0.05)
 
 
-func add_battery(amount: float) -> void:
-	current_battery = clamp(current_battery + amount, 0.0, max_battery)
-	_sync_hud()
+func _update_battery(delta: float) -> void:
+	current_battery -= battery_drain_rate * delta
+	if current_battery <= 0.0:
+		_set_flashlight(false)
+
+
+func _recover_fear(delta: float) -> void:
+	current_fear += fear_regen_rate * delta
+	if current_fear > 0.0:
+		has_panicked = false
+
+
+func _drain_fear(delta: float) -> void:
+	current_fear -= fear_drain_rate * delta
+	if current_fear <= 0.0 and not has_panicked:
+		has_panicked = true
+		panic_triggered.emit()
 
 
 func _set_flashlight(active: bool) -> void:
 	flashlight.visible = active
 	if flashlight_area:
 		flashlight_area.monitorable = active
-
-
-func _sync_hud() -> void:
-	get_tree().call_group("hud", "update_battery", current_battery, max_battery)
-	get_tree().call_group("hud", "update_fear", current_fear, max_fear)

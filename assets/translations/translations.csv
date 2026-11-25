@@ -36,3 +36,8 @@ NOTE_02_CONTENT,Text text text,Texto texto texto
 ,,
 KEY_BATTERY,Battery,Bateria
 KEY_SANITY,Sanity,Sanidade
+,,
+KEY_GAME_OVER,GAME OVER,FIM DE JOGO
+KEY_GAME_OVER_REASON,Your mind succumbed to the darkness.,Sua mente sucumbiu à escuridão.
+KEY_RETRY,Try Again,Tentar Novamente
+KEY_MAIN_MENU,Main Menu,Menu Principal

@@ -1,3 +1,4 @@
+class_name NoteReader
 extends CanvasLayer
 
 signal note_closed(note_id: String)
@@ -12,8 +13,8 @@ var read_notes: Array[String] = []
 
 
 func _ready() -> void:
+	add_to_group("note_reader")
 	_set_ui_visible(false)
-
 
 
 func _input(event: InputEvent) -> void:
@@ -23,7 +24,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") or event.is_action_pressed("ui_cancel"):
 		get_viewport().set_input_as_handled()
 		close_note()
-		
+
 
 func open_note(note_id: String, title: String, content: String) -> void:
 	if paper_panel.visible:
@@ -35,17 +36,8 @@ func open_note(note_id: String, title: String, content: String) -> void:
 	_set_ui_visible(true)
 	_set_player_movement(false)
 
-	if not read_notes.has(note_id):
+	if note_id not in read_notes:
 		read_notes.append(note_id)
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if not paper_panel.visible:
-		return
-
-	if event.is_action_pressed("interact") or event.is_action_pressed("ui_cancel"):
-		get_viewport().set_input_as_handled()
-		close_note()
 
 
 func close_note() -> void:
@@ -60,6 +52,6 @@ func _set_ui_visible(state: bool) -> void:
 
 
 func _set_player_movement(enabled: bool) -> void:
-	var player := get_tree().current_scene.find_child("Player", true, false)
-	if player and "can_move" in player:
+	var player := get_tree().get_first_node_in_group("player") as Player
+	if player:
 		player.can_move = enabled

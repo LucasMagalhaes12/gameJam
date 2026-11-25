@@ -37,9 +37,6 @@ texture = ExtResource("1_0fgqs")
 
 [node name="HUD" parent="." unique_id=1309151563 instance=ExtResource("4_rso20")]
 
-[node name="Player" parent="." unique_id=832521055 instance=ExtResource("1_jg2ha")]
-position = Vector2(171, 291)
-
 [node name="Note" parent="." unique_id=297523832 instance=ExtResource("3_dveq7")]
 position = Vector2(234, 140)
 
@@ -55,3 +52,6 @@ position = Vector2(382, 70)
 
 [node name="Baterry3" parent="." unique_id=653621414 instance=ExtResource("6_7jp6f")]
 position = Vector2(267, 77)
+
+[node name="Player" parent="." unique_id=832521055 instance=ExtResource("1_jg2ha")]
+position = Vector2(248, 241)

@@ -1,6 +1,9 @@
+class_name BatteryPickup
 extends Area2D
 
 @export var recharge_amount: float = 35.0
+
+var is_collected: bool = false
 
 
 func _ready() -> void:
@@ -8,6 +11,10 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.has_method("add_battery"):
-		body.add_battery(recharge_amount)
+	if is_collected or not body.has_method("add_battery"):
+		return
+
+	if body.add_battery(recharge_amount):
+		is_collected = true
+		set_deferred("monitoring", false)
 		queue_free()
