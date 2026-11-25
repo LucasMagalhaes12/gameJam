@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bcyw5je2cgm38"]
+
+[ext_resource type="Script" uid="uid://dr0xsprkw40dy" path="res://src/entities/battery/battery.gd" id="1_dxam3"]
+[ext_resource type="Texture2D" uid="uid://b2m6loxku71pc" path="res://icon.svg" id="2_wjem7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjem7"]
+size = Vector2(14, 14)
+
+[node name="Baterry" type="Area2D" unique_id=1383085797]
+script = ExtResource("1_dxam3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=667510999]
+position = Vector2(-3.8146973e-06, -3.8146973e-06)
+scale = Vector2(0.1171875, 0.1171875)
+texture = ExtResource("2_wjem7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1251258458]
+shape = SubResource("RectangleShape2D_wjem7")

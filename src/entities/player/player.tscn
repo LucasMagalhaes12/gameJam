@@ -92,16 +92,18 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4m8ck"]
-radius = 7.0
-height = 20.0
+radius = 13.0
+height = 42.0
 
 [sub_resource type="Gradient" id="Gradient_ts1rd"]
+offsets = PackedFloat32Array(0, 0.55241936)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vt6n5"]
 gradient = SubResource("Gradient_ts1rd")
 fill = 1
-fill_from = Vector2(0.5, 0.5)
+fill_from = Vector2(0.5, 0.4)
+fill_to = Vector2(0, 0)
 
 [node name="Player" type="CharacterBody2D" unique_id=832521055]
 motion_mode = 1
@@ -116,32 +118,46 @@ offset_bottom = 105.0
 color = Color(0.105882354, 0.29411766, 0.8235294, 1)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1739620854]
-position = Vector2(1.9073486e-06, 5.722046e-06)
+position = Vector2(9.536743e-07, 1.9073486e-06)
 rotation = -1.5707964
-scale = Vector2(0.08295965, 0.08295965)
+scale = Vector2(0.15517738, 0.1551774)
 sprite_frames = SubResource("SpriteFrames_ucufk")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.520207
+frame_progress = 0.28985664
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=890562947]
 shape = SubResource("CapsuleShape2D_4m8ck")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=317301319]
 position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+drag_left_margin = 0.95
+drag_top_margin = 0.5
+drag_right_margin = 0.5
+drag_bottom_margin = 0.5
 
 [node name="AuraLight" type="PointLight2D" parent="." unique_id=1975377424]
-position = Vector2(0, 4)
-scale = Vector2(0.25890264, 0.28320313)
+position = Vector2(3.3881318e-21, -4.7683716e-07)
+scale = Vector2(1.171875, 1.2381045)
+energy = 0.5
 texture = SubResource("GradientTexture2D_vt6n5")
+offset = Vector2(0, 5.385)
 texture_scale = 0.8
 
 [node name="FlashlightPivot" type="Node2D" parent="." unique_id=794696235]
 
 [node name="Flashlight" type="PointLight2D" parent="FlashlightPivot" unique_id=2109616781]
-scale = Vector2(0.22588228, 0.26058444)
+position = Vector2(13, -1)
+scale = Vector2(0.14472167, 0.16695517)
 color = Color(0.9996868, 0.81510395, 0.31205252, 1)
 energy = 1.5
 shadow_enabled = true
 texture = ExtResource("22_fjj3i")
 offset = Vector2(350, 0)
+
+[node name="FlashlightArea" type="Area2D" parent="FlashlightPivot" unique_id=578604256]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FlashlightPivot/FlashlightArea" unique_id=1652461301]
+visible = false
+polygon = PackedVector2Array(21, -1, 95, -40, 110, 0, 95, 38)

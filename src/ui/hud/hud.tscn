@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://4ysf41x7cvdx"]
+
+[ext_resource type="Script" uid="uid://b0f82grlor3ra" path="res://src/ui/hud/hud.gd" id="1_jobw0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvkdw"]
+bg_color = Color(0.91764706, 0.7019608, 0.03137255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udh2q"]
+bg_color = Color(0.21960784, 0.7411765, 0.972549, 1)
+
+[node name="HUD" type="CanvasLayer" unique_id=1309151563 groups=["hud"]]
+script = ExtResource("1_jobw0")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1771290648]
+offset_right = 25.0
+offset_bottom = 25.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 140
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1062906970]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="BatteryLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1556273017]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+text = "KEY_BATTERY"
+
+[node name="BatteryBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=1209310937]
+custom_minimum_size = Vector2(60, 5)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_cvkdw")
+value = 100.0
+show_percentage = false
+
+[node name="FearLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1287404386]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+text = "KEY_SANITY"
+
+[node name="FearBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=1123119773]
+custom_minimum_size = Vector2(60, 5)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_udh2q")
+value = 100.0
+show_percentage = false

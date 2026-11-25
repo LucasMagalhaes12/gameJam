@@ -2,6 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dqs5scla0n28i" path="res://assets/sprites/background/background.jpeg" id="1_0fgqs"]
 [ext_resource type="PackedScene" uid="uid://uaq062mn5qwu" path="res://src/entities/player/player.tscn" id="1_jg2ha"]
+[ext_resource type="PackedScene" uid="uid://ce6ofoyq22v1e" path="res://src/entities/note/note.tscn" id="3_dveq7"]
+[ext_resource type="PackedScene" uid="uid://bim1ia7p6bpdk" path="res://src/entities/note_reader/note_reader.tscn" id="4_8maqd"]
+[ext_resource type="PackedScene" uid="uid://4ysf41x7cvdx" path="res://src/ui/hud/hud.tscn" id="4_rso20"]
+[ext_resource type="PackedScene" uid="uid://bcyw5je2cgm38" path="res://src/entities/battery/battery.tscn" id="6_7jp6f"]
 
 [node name="Game" type="Node2D" unique_id=506858452]
 
@@ -9,24 +13,45 @@
 color = Color(0.15607512, 0.15607512, 0.15607512, 1)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1562973465]
+visible = false
 custom_minimum_size = Vector2(200, 100)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -685.0
-offset_top = -383.0
-offset_right = 1006.0
-offset_bottom = 433.0
+offset_left = -1008.0
+offset_top = -489.0
+offset_right = 683.0
+offset_bottom = 327.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.1319848, 0.1319848, 0.1319848, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=767936315]
-offset_left = -685.0
-offset_top = -383.0
-offset_right = -645.0
-offset_bottom = -343.0
+offset_left = -522.0
+offset_top = -484.0
+offset_right = 2230.0
+offset_bottom = 1052.0
 texture = ExtResource("1_0fgqs")
 
+[node name="NoteReader" parent="." unique_id=497620613 groups=["note_reader"] instance=ExtResource("4_8maqd")]
+
+[node name="HUD" parent="." unique_id=1309151563 instance=ExtResource("4_rso20")]
+
 [node name="Player" parent="." unique_id=832521055 instance=ExtResource("1_jg2ha")]
-position = Vector2(147, 142)
+position = Vector2(171, 291)
+
+[node name="Note" parent="." unique_id=297523832 instance=ExtResource("3_dveq7")]
+position = Vector2(234, 140)
+
+[node name="Note2" parent="." unique_id=1383733188 instance=ExtResource("3_dveq7")]
+position = Vector2(276, 139)
+note_id = "NOTE_02"
+
+[node name="Baterry" parent="." unique_id=1383085797 instance=ExtResource("6_7jp6f")]
+position = Vector2(457, 171)
+
+[node name="Baterry2" parent="." unique_id=2030033887 instance=ExtResource("6_7jp6f")]
+position = Vector2(382, 70)
+
+[node name="Baterry3" parent="." unique_id=653621414 instance=ExtResource("6_7jp6f")]
+position = Vector2(267, 77)
