@@ -21,6 +21,7 @@ SaveManager="*uid://baftc6cph02qw"
 LanguageManager="*uid://6tmae3ok3tmu"
 ScreenManager="*uid://dvoc60wefj7ha"
 SceneTransition="*uid://meh04l7s4xb0"
+AudioManager="*uid://cobv8ypqhhe0d"
 
 [display]
 

@@ -3,6 +3,8 @@ extends CanvasLayer
 
 signal note_closed(note_id: String)
 
+@onready var audio_note: AudioStreamPlayer2D = $AudioNote
+
 @onready var dim_bg: ColorRect = $DimBackground
 @onready var paper_panel: PanelContainer = $PaperPanel
 @onready var title_label: Label = $PaperPanel/MarginContainer/VBoxContainer/TitleLabel
@@ -35,12 +37,14 @@ func open_note(note_id: String, title: String, content: String) -> void:
 	content_label.text = content
 	_set_ui_visible(true)
 	_set_player_movement(false)
+	audio_note.play()
 
 	if note_id not in read_notes:
 		read_notes.append(note_id)
 
 
 func close_note() -> void:
+	audio_note.play()
 	_set_ui_visible(false)
 	_set_player_movement(true)
 	note_closed.emit(current_note_id)

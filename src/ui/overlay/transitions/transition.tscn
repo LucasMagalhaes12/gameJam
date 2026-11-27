@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://meh04l7s4xb0"]
 
 [ext_resource type="Script" uid="uid://b2d4cbpqioqp8" path="res://src/ui/overlay/transitions/transition.gd" id="1_caa3h"]
+[ext_resource type="AudioStream" uid="uid://djlbjbb1vib6q" path="res://assets/sfx/blueberry.wav" id="2_dl16x"]
 
 [node name="Transition" type="CanvasLayer" unique_id=711600069]
 script = ExtResource("1_caa3h")
@@ -16,3 +17,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1048799417]
+stream = ExtResource("2_dl16x")

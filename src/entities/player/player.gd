@@ -5,6 +5,11 @@ signal panic_triggered
 
 @export var speed: float = 60.0
 @export var flashlight_turn_speed: float = 8.5
+@onready var audio_flashlight: AudioStreamPlayer2D = $AudioFlashlight
+@onready var footstep_sound: AudioStreamPlayer2D = $FootstepSound
+
+var step_interval: float = 0.45
+var step_timer: float = 0.0
 
 @export_group("Lanterna e Medo")
 @export var max_battery: float = 100.0
@@ -59,6 +64,7 @@ func _physics_process(delta: float) -> void:
 
 	_handle_movement()
 	_handle_flashlight(delta)
+	_handle_footsteps(delta)
 
 
 func _process(delta: float) -> void:
@@ -80,6 +86,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if not flashlight.visible and current_battery <= 0.0:
 			return
 		_set_flashlight(not flashlight.visible)
+		audio_flashlight.play()
 
 
 func add_battery(amount: float) -> bool:
@@ -135,3 +142,14 @@ func _set_flashlight(active: bool) -> void:
 	flashlight.visible = active
 	if flashlight_area:
 		flashlight_area.monitorable = active
+
+
+func _handle_footsteps(delta: float) -> void:
+	if can_move and velocity.length() > 10.0:
+		step_timer -= delta
+		if step_timer <= 0.0:
+			footstep_sound.play()
+			step_timer = step_interval
+	else:
+		# Pequeno atraso inicial para evitar spam se o jogador der toques curtos no teclado
+		step_timer = 0.15

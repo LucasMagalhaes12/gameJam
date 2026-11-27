@@ -18,23 +18,27 @@ func _ready() -> void:
 
 func _on_play_game_pressed() -> void:
 	set_process_input(false)
+	AudioManager.play_click()
 	SceneTransition.change_scene("res://src/levels/introduction/introduction.tscn")
 	#get_tree().change_scene_to_file("res://src/ui/menus/new_game/new_game.tscn")
 
 
 func _on_settings_pressed() -> void:
 	set_process_input(false)
+	AudioManager.play_click()
 	SceneTransition.change_scene("res://src/ui/menus/settings/settings.tscn")
 	#get_tree().change_scene_to_file("res://src/ui/menus/settings/settings.tscn")
 
 
 func _on_credits_pressed() -> void:
 	set_process_input(false)
+	AudioManager.play_click()
 	SceneTransition.change_scene("res://src/ui/menus/credits/credits.tscn")
 	#get_tree().change_scene_to_file("res://src/ui/menus/credits/credits.tscn")
 
 
 func _on_exit_pressed() -> void:
+	AudioManager.play_click()
 	get_tree().quit()
 
 

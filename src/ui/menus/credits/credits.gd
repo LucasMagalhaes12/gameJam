@@ -12,5 +12,6 @@ func _input(event: InputEvent) -> void:
 
 func _go_to_next_scene() -> void:
 	set_process_input(false)
+	AudioManager.play_click()
 	SceneTransition.change_scene("res://src/ui/menus/main_menu/main_menu.tscn")
 	#get_tree().change_scene_to_file("res://src/ui/menus/main_menu/main_menu.tscn")

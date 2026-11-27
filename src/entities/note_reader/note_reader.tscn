@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bim1ia7p6bpdk"]
 
 [ext_resource type="Script" uid="uid://d1stluv1kmd7t" path="res://src/entities/note_reader/note_reader.gd" id="1_30duq"]
+[ext_resource type="AudioStream" uid="uid://dnhr14550jcuw" path="res://assets/sfx/notes/turn_page.wav" id="2_wp6ul"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0a554"]
 bg_color = Color(0.8745098, 0.8392157, 0.75686276, 1)
@@ -112,3 +113,7 @@ horizontal_alignment = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=258924546]
 libraries/ = SubResource("AnimationLibrary_553q1")
 autoplay = &"breath_label"
+
+[node name="AudioNote" type="AudioStreamPlayer2D" parent="." unique_id=1930078942]
+stream = ExtResource("2_wp6ul")
+bus = &"SFX"

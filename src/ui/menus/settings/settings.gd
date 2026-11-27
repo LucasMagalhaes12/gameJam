@@ -20,22 +20,26 @@ func _ready() -> void:
 
 
 func _on_resolution() -> void:
+	AudioManager.play_click()
 	ScreenManager.next_resolution()
 	resolution_lb.text = ScreenManager.get_current_resolution_string()
 
 
 func _on_language() -> void:
+	AudioManager.play_click()
 	LanguageManager.next_language()
 	_update_ui()
 
 
 func _on_fullscreen() -> void:
+	AudioManager.play_click()
 	ScreenManager.toggle_fullscreen()
 	_update_ui()
 
 
 func _on_back() -> void:
 	set_process_input(false)
+	AudioManager.play_click()
 	SceneTransition.change_scene("res://src/ui/menus/main_menu/main_menu.tscn")
 	#get_tree().change_scene_to_file("res://src/ui/menus/main_menu/main_menu.tscn")
 

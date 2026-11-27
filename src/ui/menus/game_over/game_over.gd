@@ -14,11 +14,13 @@ func _ready() -> void:
 
 func _on_retry_pressed() -> void:
 	_disable_buttons()
-	SceneTransition.change_scene("res://src/levels/game.tscn")
+	AudioManager.play_click()
+	SceneTransition.change_scene("res://src/levels/level/game.tscn")
 
 
 func _on_menu_pressed() -> void:
 	_disable_buttons()
+	AudioManager.play_click()
 	SceneTransition.change_scene("res://src/ui/menus/main_menu/main_menu.tscn")
 
 
