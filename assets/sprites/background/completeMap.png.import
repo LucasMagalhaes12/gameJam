@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqo8to1yx3sd2"
-path="res://.godot/imported/blueberry.png-53f035ef795e3cd55ea20fd1ed6f8aec.ctex"
+uid="uid://dbso251lxnf00"
+path="res://.godot/imported/completeMap.png-8f1b26541a1775cc107877318a1a64a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/blueberry.png"
-dest_files=["res://.godot/imported/blueberry.png-53f035ef795e3cd55ea20fd1ed6f8aec.ctex"]
+source_file="res://assets/sprites/background/completeMap.png"
+dest_files=["res://.godot/imported/completeMap.png-8f1b26541a1775cc107877318a1a64a7.ctex"]
 
 [params]
 

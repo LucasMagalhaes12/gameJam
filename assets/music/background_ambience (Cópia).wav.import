@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckyxqnpoye3yo"
+path="res://.godot/imported/background_ambience (Cópia).wav-db9ae8445d3887585b7f4c3a05a09af9.sample"
+
+[deps]
+
+source_file="res://assets/music/background_ambience (Cópia).wav"
+dest_files=["res://.godot/imported/background_ambience (Cópia).wav-db9ae8445d3887585b7f4c3a05a09af9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -95,8 +95,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4m8ck"]
-radius = 13.0
-height = 42.0
+height = 20.0
 
 [sub_resource type="Gradient" id="Gradient_ts1rd"]
 offsets = PackedFloat32Array(0, 0.55241936)
@@ -119,7 +118,7 @@ stream_1/stream = ExtResource("25_ngh1c")
 motion_mode = 1
 script = ExtResource("1_4m8ck")
 flashlight_turn_speed = 8.475
-battery_drain_rate = 3.0
+battery_drain_rate = 0.0
 fear_drain_rate = 3.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1485081357]
@@ -138,6 +137,7 @@ sprite_frames = SubResource("SpriteFrames_ucufk")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.18704906
+offset = Vector2(50, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=890562947]
 shape = SubResource("CapsuleShape2D_4m8ck")
@@ -167,7 +167,7 @@ color = Color(0.9996868, 0.81510395, 0.31205252, 1)
 energy = 1.5
 shadow_enabled = true
 texture = ExtResource("22_fjj3i")
-offset = Vector2(350, 0)
+offset = Vector2(400, 0)
 
 [node name="FlashlightArea" type="Area2D" parent="FlashlightPivot" unique_id=578604256]
 

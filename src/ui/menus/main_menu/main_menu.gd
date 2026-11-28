@@ -8,7 +8,7 @@ extends Control
 
 func _ready() -> void:
 	play_game.grab_focus()
-
+	AudioManager.play_intro()
 	play_game.pressed.connect(_on_play_game_pressed)
 	settings.pressed.connect(_on_settings_pressed)
 	credits.pressed.connect(_on_credits_pressed)

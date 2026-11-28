@@ -10,3 +10,6 @@ https://opengameart.org/content/background-rumble-noise
 
 art:
 Google Gemini
+
+player:
+https://opengameart.org/content/animated-top-down-survivor-player
